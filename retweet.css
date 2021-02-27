@@ -1,0 +1,64 @@
+*{
+    color: black;
+    font-family: 'Acme', sans-serif;;
+}
+
+
+header{
+    background-color: #1DA1F2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2{
+    padding: 10px 0px 10px 4px;
+}
+
+h2 a{
+    text-decoration: none;
+    
+}
+
+ul li{
+    list-style: none;
+    display: inline;
+}
+
+ul li a{
+    text-decoration: none;
+    padding: 4px;
+    font-family: 'Acme', sans-serif;;
+}
+
+.container{
+    margin: 10px 0px 10px 0px;
+    /*border: solid black 2px;*/
+    padding: 10px 0px 10px 0px;
+}
+
+.container-2{
+    margin: 10px 0px 10px 0px;
+    border: solid black 2px;
+    padding: 10px 0px 10px 0px;
+}
+
+p{
+    padding: 0px 0px 0px 10px;
+}
+
+#retweet{
+    padding-top: 0;
+    padding-left: 0;
+    width: 98%;
+    height: 100px;
+    margin-left: 10px;
+    display: flex;
+}
+
+#submit{
+    font-size: large;
+    margin: 10px 0px 0px 10px;
+}
+
+

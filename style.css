@@ -1,0 +1,72 @@
+*{
+    color: black;
+    font-family: 'Acme', sans-serif;;
+}
+
+
+/* Split the screen in half */
+.split {
+    height: 50%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the top left side */
+.top-left {
+    top: 0;
+    left: 0;
+    background-color: #1DA1F2;
+    border: solid black 4px;
+    border-radius: 8px;
+  }
+  
+  /* Control the top right side */
+  .top-right {
+    top: 0;
+    left: 50%;
+    background-color: #1DA1F2;
+    border: solid black 4px;
+    border-radius: 8px;
+  }
+  
+  /* Control the bottom right side */
+  .bottom-right {
+    top: 50%;
+    left: 50%;
+    background-color: #1DA1F2;
+    border: solid black 4px;
+    border-radius: 8px;
+  }
+  
+  /* Control the bottom left side */
+  .bottom-left {
+    top: 50%;
+    left: 0;
+    background-color: #1DA1F2;
+    border: solid black 4px;
+    border-radius: 8px;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+/* Style the image inside the centered container, if needed */
+.centered img {
+    width: 150px;
+    border-radius: 20%;
+}
+
+img:hover{
+    width: 180px;
+}
+

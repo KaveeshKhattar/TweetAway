@@ -1,48 +1,30 @@
-'''
-import tweepy
-import logging 
-import os
-
-# Authenticate to Twitter
-
-#auth = tweepy.OAuthHandler("1363842412842426368-1xEL8FdwFLH9i2VWPfNK8Kh6KETKKd", "z9UjdHZYwY9v2KulRCvNiMJpomOgx5Y8fYuC2FkcI7kVG")
-#auth.set_access_token("99mfrwuLuJErs7AUuM4dL2WhD", "ReA1R2GOMCM1vcKOOgGKrA2s7x89PwotsN0lUZ1BgQgNaHfEfR")
-
-auth = tweepy.OAuthHandler("mku6TWJtRlZ74f8kgz0wSiUcc", "hppXen2cS6NrkuMdbKEXBWBGw2tg5gIRpDjRkcqIPWBs9hO67Y")
-auth.set_access_token("1363842412842426368-BPzhaydb7WMO23pf6G1Tmjx4d5wjcM", "LBZqqUAYdzD56IbR4u2vHYTStAfuofIrTPVXNnMnys0T5")
-
-# Create API object
-api = tweepy.API(auth)
- 
-# Create a tweet
-api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
-
-var=4
-timeline = api.home_timeline()
-for tweet in timeline:
-    print(f"{tweet.user.name} said {tweet.text}") #most recent tweets by which user
-api.update_status("Test tweet from I ",var) #create tweet
-var+=1
-'''
-
-# tweepy-bots/bots/config.py
-import twitter
+#from __future__ import unicode_literals
 import tweepy
 import logging
 import os
 
-#logger = logging.getLogger()
+logger = logging.getLogger()
 
-'''
 def create_api():
-    consumer_key = os.getenv("1363842412842426368-yv9S5iGu6zlSObw6KPPKkwBFf1xvpw")
-    consumer_secret = os.getenv("55RgNfqnm4gd4nCUkG5vrPM4DJDrhrNZerdTENwypMzV2")
-    access_token = os.getenv("1363842412842426368-0rlnfyxqh3yPGIdSq9K8daH622m3JF")
-    access_token_secret = os.getenv("MNPWsiROlhUDVoEgbHSDXECSRyWdRDvXXj1CMPoy1zxmL")
-
-    auth = tweepy.OAuthHandler("consumer_key", "consumer_secret")
-    auth.set_access_token("access_token", "access_token_secret")
-    api = tweepy.API(auth)
+    consumer_key = "pFJ11iHOw8zUbOQCzsh4ljOOh"
+    consumer_secret = "YXP0CYbSZvlhmzW89KhIylbjBXhb4dNP128QeumZbHegtCpPPD"
+    access_token = "1363842412842426368-9VggGHS2x60F92ZfjEnak4JgYXAdP7"
+    access_token_secret = "RvnPUQ1PoNJWrVWOP1e1545nmeUTa1g2CH8Ql45A8IWwh"
+    '''
+    consumer_key = os.environ.get('Name[0]')
+    consumer_key.decode()
+    consumer_secret = os.environ.get('Name[1]')
+    consumer_secret.decode()
+    access_token = os.environ.get('Name[2]')
+    access_token.decode()
+    access_token_secret = os.environ.get('Name[3]')
+    access_token_secret.decode()
+    print(access_token_secret)
+    '''
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth, wait_on_rate_limit=True, 
+        wait_on_rate_limit_notify=True)
     try:
         api.verify_credentials()
     except Exception as e:
@@ -50,43 +32,4 @@ def create_api():
         raise e
     logger.info("API created")
     return api
-
-#display_api = create_api()
-#print(display_api)
-'''
-
-#wait_on_rate_limit=True, wait_on_rate_limit_notify=True
-
-
-#consumer_key = os.getenv("1363842412842426368-yv9S5iGu6zlSObw6KPPKkwBFf1xvpw")
-#consumer_secret = os.getenv("55RgNfqnm4gd4nCUkG5vrPM4DJDrhrNZerdTENwypMzV2")
-#access_token = os.getenv("1363842412842426368-0rlnfyxqh3yPGIdSq9K8daH622m3JF")
-#access_token_secret = os.getenv("MNPWsiROlhUDVoEgbHSDXECSRyWdRDvXXj1CMPoy1zxmL")
-
-'''consumer_key = ("1363842412842426368-yv9S5iGu6zlSObw6KPPKkwBFf1xvpw")
-consumer_secret = ("55RgNfqnm4gd4nCUkG5vrPM4DJDrhrNZerdTENwypMzV2")
-access_token = ("1363842412842426368-0rlnfyxqh3yPGIdSq9K8daH622m3JF")
-access_token_secret = ("MNPWsiROlhUDVoEgbHSDXECSRyWdRDvXXj1CMPoy1zxmL")
-'''
-#export 'consumer_key' = '1363842412842426368-yv9S5iGu6zlSObw6KPPKkwBFf1xvpw'
-#export 'consumer_secret' = "55RgNfqnm4gd4nCUkG5vrPM4DJDrhrNZerdTENwypMzV2"
-#export 'access_token' = "1363842412842426368-0rlnfyxqh3yPGIdSq9K8daH622m3JF"
-#export 'access_token_secret' = "MNPWsiROlhUDVoEgbHSDXECSRyWdRDvXXj1CMPoy1zxmL"
-
-
-print('Consumer Key: ', consumer_key, " -- ",consumer_secret," -- ",access_token)
-
-
-api = twitter.Api(consumer_key="1363842412842426368-yv9S5iGu6zlSObw6KPPKkwBFf1xvpw", consumer_secret= "55RgNfqnm4gd4nCUkG5vrPM4DJDrhrNZerdTENwypMzV2", access_token_key="55RgNfqnm4gd4nCUkG5vrPM4DJDrhrNZerdTENwypMzV2", access_token_secret="MNPWsiROlhUDVoEgbHSDXECSRyWdRDvXXj1CMPoy1zxmL")
-
-
-#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-#auth.set_access_token(access_token, access_token_secret)
-#api = tweepy.API(auth)
-
-screen_name = "tweetawaybot"
-
-for follower in api.followers(screen_name): 
-    print(follower.screen_name)
-
- 
+    

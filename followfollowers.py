@@ -16,10 +16,15 @@ def follow_followers(api):
     for follower in tweepy.Cursor(api.followers).items():
         if not follower.following:
             logger.info(f"Following {follower.name}")
+            print(logger.info(f"Following {follower.name}"))
             follower.follow()
-
-
-
+'''
+def return_followers():
+    logger.info("Retrieving and following followers")
+        for follower in tweepy.Cursor(api.followers).items():
+            if not follower.following:
+                logger.info(f"Following {follower.name}")  
+'''
 
 def main():
     api = create_api()

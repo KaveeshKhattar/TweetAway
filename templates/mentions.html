@@ -11,7 +11,6 @@
     <header>
         <h2><a href="index.html">TweetAway</a></h2>
         <nav>
-            
             <ul>
                 <li><a href="favourite.html">Favourite</a></li>
                 <li><a href="retweet.html">Retweet</a></li>
@@ -21,11 +20,9 @@
     </header>
 
     <div class = 'container'>
-        <p>@username1 mentioned @you in the following tweet: Tweet says...</p>
-        <p>@username1 mentioned @you in the following tweet: Tweet says...</p>
-        <p>@username1 mentioned @you in the following tweet: Tweet says...</p>
-        <p>@username1 mentioned @you in the following tweet: Tweet says...</p>
+        {% for i in range(len(tweets)): %}
+            <p>{{username[i]}} mentioned @tweetawaybot in the following tweet: Tweet says...{{tweets[i]}}</p>
+        {% endfor %}
     </div>
-
 </body>
 </html>

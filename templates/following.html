@@ -39,10 +39,9 @@
           
           <h2 class = 'headings'>Following</h2>
           <ol>
-            <li>Modi</li>
-            <li>Musk</li>
-            <li>Harris</li>
-            <li>Sandberg</li>
+            {%for i in followers %}
+                <li>The twitter bit is now following {{i}}</li>
+            {% endfor %}
             
         </ol>
       </div>
